@@ -1,12 +1,12 @@
 ---
-title: "MySQLの基礎知識とエラー解消メモ"
+title: "MySQL CLIの基本操作"
 emoji: "🐬"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["DB", "MySQL"]
-published: false
+published: true
 ---
 
-# ローカルでの起動方法
+# ローカルで MySQL を起動する
 
 MySQL サーバーの起動/停止は `mysql.server start/stop` コマンドを利用する。
 
@@ -102,39 +102,6 @@ mysql> GRANT type_of_permission ON database_name.table_name TO 'username'@'local
 mysql> SHOW GRANTS FOR 'username'@'localhost';
 ```
 
-# node.js からの接続ができない
-
-## エラー内容
-
-```sh
-Error: ER_NOT_SUPPORTED_AUTH_MODE: Client does not support authentication protocol requested by server; consider upgrading MySQL client`
-```
-
-mysql クライアントのアップグレードが必要らしい。
-
-## 原因
-
-> 原因は MySQL8.0 から採用された認証プラグインが原因のようです。MySQL5.7 までは【mysql_native_password】だったのですが MySQL8.0 からは【caching_sha2_password】が採用されています。
-
-ということのようです。（引用元:[【node.js】MySQL8.0 に接続できない。Error: ER_NOT_SUPPORTED_AUTH_MODE](https://www.chuken-engineer.com/entry/2020/09/04/074216)
-
-## 解決策
-
-引用したサイトで、2 つの解決策が提示されていました。
-
-1. 認証プラグインの変更
-2. mysql2 を使う
-
-1 は`caching_sha2_password`を`mysql_native_password`に変えるということ。
-細かい仕組みの理解はしてないですが、過去のバージョンの設定に変える時点でなるべくやりたくない。
-
-2 は`mysql2`というパッケージを使う方法。
-
-@[card](https://github.com/sidorares/node-mysql2)
-
-どうやら互換性があるようなので、こちらを使うことにして、パッケージを追加してみると、無事に接続確認ができた。
-
 # 参考リンク
 
 [MySQL で新しいユーザーを作成して権限を付与する方法](https://www.digitalocean.com/community/tutorials/how-to-create-a-new-user-and-grant-permissions-in-mysql-ja)
-[【node.js】MySQL8.0 に接続できない。Error: ER_NOT_SUPPORTED_AUTH_MODE](https://www.chuken-engineer.com/entry/2020/09/04/074216)
