@@ -1,9 +1,9 @@
 ---
 title: "Node.js/Webアプリケーションに関する基礎知識メモ"
-emoji: "🐬"
+emoji: "📗"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["Web", "Nodejs"]
-published: false
+published: true
 ---
 
 ## Node でよく使われる環境変数と利用方法
