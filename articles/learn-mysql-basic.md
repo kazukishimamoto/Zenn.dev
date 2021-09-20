@@ -137,3 +137,4 @@ mysql クライアントのアップグレードが必要らしい。
 # 参考リンク
 
 [MySQL で新しいユーザーを作成して権限を付与する方法](https://www.digitalocean.com/community/tutorials/how-to-create-a-new-user-and-grant-permissions-in-mysql-ja)
+[【node.js】MySQL8.0 に接続できない。Error: ER_NOT_SUPPORTED_AUTH_MODE](https://www.chuken-engineer.com/entry/2020/09/04/074216)
