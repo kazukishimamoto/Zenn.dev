@@ -1,9 +1,9 @@
 ---
-title: "Node.js/Webアプリケーションに関する基礎知識メモ"
-emoji: "📗"
-type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ["Web", "Nodejs"]
-published: true
+title: 'Node.js/Webアプリケーションに関する基礎知識メモ'
+emoji: '📗'
+type: 'tech' # tech: 技術記事 / idea: アイデア
+topics: ['Web', 'Nodejs']
+published: false
 ---
 
 ## Node でよく使われる環境変数と利用方法
@@ -17,7 +17,7 @@ published: true
 process.env から呼び出す。
 
 ```javascript
-console.log(process.env.NODE_ENV);
+console.log(process.env.NODE_ENV)
 ```
 
 ## デバックで使われる用語
@@ -53,12 +53,12 @@ module.exports = {
     es2021: true,
     node: true,
   },
-  extends: "eslint:recommended", // ESLintのおすすめルールを追加
+  extends: 'eslint:recommended', // ESLintのおすすめルールを追加
   parserOptions: {
     ecmaVersion: 12,
   },
   rules: {},
-};
+}
 ```
 
 ### 静的解析のルールを設定する
@@ -71,19 +71,19 @@ module.exports = {
 module.exports = {
   // (省略)
   rules: {
-    indent: ["error", 2, { SwitchCase: 1 }],
-    quotes: ["error", "double"],
-    semi: ["error", "always"],
-    "no-unused-vars": [
-      "error",
+    indent: ['error', 2, { SwitchCase: 1 }],
+    quotes: ['error', 'double'],
+    semi: ['error', 'always'],
+    'no-unused-vars': [
+      'error',
       {
-        vars: "all",
-        args: "node",
+        vars: 'all',
+        args: 'node',
       },
     ],
-    "no-console": ["off"],
+    'no-console': ['off'],
   },
-};
+}
 ```
 
 ## ミドルウェアについて
