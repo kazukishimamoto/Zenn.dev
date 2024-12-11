@@ -1,9 +1,9 @@
 ---
-title: "MySQL CLIの基本操作"
-emoji: "🐬"
-type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ["DB", "MySQL"]
-published: true
+title: 'MySQL CLIの基本操作'
+emoji: '🐬'
+type: 'tech' # tech: 技術記事 / idea: アイデア
+topics: ['DB', 'MySQL']
+published: false
 ---
 
 # ローカルで MySQL を起動する
